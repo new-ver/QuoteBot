@@ -7,6 +7,15 @@ import json
 import random
 import textwrap
 
+#For generating random quotes
+def getFont(i):
+    switcher={
+        1: "LongLiner.ttf",
+        2: "Chasy.otf",
+        3: "Summer.otf",
+        4: "Lemon.otf",
+    }
+    return switcher.get(i)
 #Get a image from picsum
 urllib.request.urlretrieve("https://picsum.photos/1080", "00000001.jpg")
 
@@ -20,11 +29,19 @@ thisQuote = quotes[num].get("text")
 img = Image.open("00000001.jpg")
 lines = textwrap.wrap(thisQuote, width=25)
 draw = ImageDraw.Draw(img)
-font = ImageFont.truetype("LongLiner.ttf", 95)
+
+#Get a random Font
+fontNumber = random.randint(1,5)
+font = ImageFont.truetype(getFont(fontNumber), 95)
+
 
 #Get the largest letter in the font
-line_height = font.getsize('hg')[1]
-y_text = 0
+if(fontNumber == 4):
+    line_height = font.getsize('hg')[1] + 20
+else:
+    line_height = font.getsize('hg')[1]
+
+y_text = 50
 x = 0
 for line in lines:
     draw.text((50, y_text),line,(255,255,255),font=font, align = "left")
