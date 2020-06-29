@@ -26,6 +26,7 @@ quotes = json.load(f)
 num = random.randint(0,len(quotes)-1)
 thisQuote = quotes[num].get("text")
 
+#TODO Remove saving photo locally
 img = Image.open("00000001.jpg")
 lines = textwrap.wrap(thisQuote, width=25)
 draw = ImageDraw.Draw(img)
