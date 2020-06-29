@@ -1,1 +1,1 @@
-A simple program to automaticly generate quotes on pictures emulating a generic instagram account 
+A simple program to automaticlly generate quotes on pictures emulating a generic instagram account 
