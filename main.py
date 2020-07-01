@@ -14,11 +14,16 @@ def getFont(i):
         2: "Chasy.otf",
         3: "Summer.otf",
         4: "Lemon.otf",
+        5: "Orange.ttf",
+        6: "paper.ttf",
+        7: "Shorelines.otf",
     }
     return switcher.get(i)
+
 #Get a image from picsum
 urllib.request.urlretrieve("https://picsum.photos/1080", "00000001.jpg")
 
+#Open json file
 f = open('quotes.json')
 quotes = json.load(f)
 
@@ -32,7 +37,7 @@ lines = textwrap.wrap(thisQuote, width=25)
 draw = ImageDraw.Draw(img)
 
 #Get a random Font
-fontNumber = random.randint(1,5)
+fontNumber = random.randint(1,8)
 font = ImageFont.truetype(getFont(fontNumber), 95)
 
 
